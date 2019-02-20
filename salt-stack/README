@@ -1,0 +1,7 @@
+Ones you have started your dev stack open a new
+terminal, go to the devSaltStack repo and run ./login_master.sh
+
+Copy and past the Examples.sh script or clone the repo and 
+go to the salt-stack directory and run the Examples.sh script.
+
+Then go at it!

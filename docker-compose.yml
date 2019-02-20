@@ -1,0 +1,38 @@
+version: '2'
+
+services: 
+  salt-master:
+    build:
+      context: .
+      dockerfile: Dockerfile.master
+    environment:
+      - ROLE=salt_master
+
+  salt-minion_1:
+    build:
+      context: .
+      dockerfile: Dockerfile.minion
+    environment:
+      - ROLE=minion_1 
+    depends_on:
+      - salt-master
+
+  salt-minion_2:
+    build:
+      context: .
+      dockerfile: Dockerfile.minion
+    environment:
+      - ROLE=minion_2
+    depends_on:
+      - salt-master
+
+  salt-minion_3:
+    build:
+      context: .
+      dockerfile: Dockerfile.minion
+    environment:
+      - ROLE=minion_3
+    depends_on:
+      - salt-master
+
+
